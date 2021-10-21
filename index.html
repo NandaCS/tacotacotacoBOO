@@ -1,0 +1,400 @@
+<style>
+  /* COLORS */
+  :root {
+    --bg: #71CEB8;
+    --shell: #FFCF70;
+    --dshell: #DBB260;
+    --gray: #545454;
+    --meat: #754B35;
+    --salad: #2BBF7F;
+    --tomato: #D65353;
+    --blue: #3AD3EA;
+  }
+  
+  @keyframes bite1 {
+    0% {
+      visibility: hidden;
+    }
+    10% {
+      visibility: hidden;
+    }
+    11% {
+      visibility: visible;
+    }
+    100% {
+      visibility: visible;
+    }
+  }
+  
+    @keyframes bite2 {
+    0% {
+      visibility: hidden;
+    }
+    25% {
+      visibility: hidden;
+    }
+    26% {
+      visibility: visible;
+    }
+    100% {
+      visibility: visible;
+    }
+  }
+  
+    @keyframes bite3 {
+    0% {
+      visibility: hidden;
+    }
+    49% {
+      visibility: hidden;
+    }
+    50% {
+      visibility: visible;
+    }
+    100% {
+      visibility: visible;
+    }
+  }
+  
+  @keyframes crying {
+    0% {
+      opacity: 20%;
+    }
+    49% {
+      opacity: 80%;
+    }
+    50% {
+      opacity: 81%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+    
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg);
+  }
+  
+  .frame {
+/*     background-color: rgba(0,0,0, 0.1); */
+    width: 400px;
+    height: 400px;
+    position: absolute;
+  }
+  
+  .shell {
+    background-color: var(--shell);
+    width: 70%;
+    height: 40%;
+    border-radius: 51% 48% 10% 10% / 82% 83% 10% 10%;
+    background-image: radial-gradient(var(--dshell) 5%, transparent 0),
+      radial-gradient(var(--dshell) 5%, transparent 0);
+    background-size: 30px 30px;
+    background-position: 0 0, 17px 17px;
+    position: absolute;
+    left: 10%;
+    top: 15%;
+  }
+  
+  .s-right {
+    transform: translateX(35px);
+  }
+  
+  .meat {
+/*     background-color: rgba(0, 0, 0, 0.1); */
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    top: 24%;
+    left: 14%;
+  }
+  
+  .mince {
+    background-color: var(--meat);
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .mince:nth-child(1) {
+    bottom: 0;
+    left: -10%;
+  }
+  
+  .mince:nth-child(2) {
+    bottom: 10%;
+    left: 0;
+  }
+  
+  .mince:nth-child(3) {
+    bottom: 30%;
+    left: 0;
+  }
+  
+  .mince:nth-child(4) {
+    bottom: 45%;
+    left: 10%;
+  }
+  
+  .salad {
+/*     background-color: rgba(0, 0, 0, 0.1); */
+    width: 60%;
+    height: 40%;
+    position: absolute;
+    top: 14%;
+    left: 13%;
+  }
+  
+  .leaf {
+    background-color: var(--salad);
+    width: 25%;
+    height: 30%;
+    position: absolute;
+    border-radius: 34% 53% 48% 40% / 42% 35% 55% 40%;
+  }
+  
+  .leaf:nth-child(1) {
+    top: 25%;
+    left: 2%;
+    transform: rotate(-60deg) scale(0.7);
+  }
+  
+  .leaf:nth-child(2) {
+    top: 10%;
+    left: 15%;
+    transform: rotate(-40deg);
+  }
+  
+  .leaf:nth-child(3) {
+    top: -5%;
+    left: 33%;
+    transform: rotate(-40deg);
+  }
+  
+  .leaf:nth-child(4) {
+    bottom: 15%;
+    right: -30%;
+    transform: rotate(40deg);
+  }
+  
+  .leaf:nth-child(5) {
+    bottom: 45%;
+    right: -20%;
+    transform: rotate(25deg);
+  }
+  
+  .tomatoes {
+/*     background-color: rgba(0, 0, 0, 0.1); */
+    width: 70%;
+    height: 40%;
+    position: absolute;
+    top: 15%;
+    left: 13%;
+  }
+  
+  .tomato {
+    background-color: var(--tomato);
+    width: 25%;
+    height: 40%;
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .tomato:nth-child(1) {
+    bottom: 5%;
+    left: 4%;
+  }
+  
+  .tomato:nth-child(2) {
+    top: 23%;
+    left: 8%;
+  }
+  
+  .tomato:nth-child(3) {
+    top: 0;
+    left: 25%;
+  }
+  
+  .face {
+/*     background-color: rgba(0, 0, 0, 0.1); */
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    left: 30%;
+    top: 25%;
+  }
+
+  .eye {
+    background-color: var(--gray);
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+  }
+  
+  .e-right {
+    right: 0;
+  }
+  
+  .eye::before {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    height: 45%;
+    width: 45%;
+    border-radius: 50%;
+    top: 18%;
+    left: 18%;
+  }
+  
+    .eye::after {
+    content: "";
+    background-color: #fff;
+    height: 25%;
+    width: 25%;
+    border-radius: 50%;
+    position: absolute;
+    top: 60%;
+    left: 60%;
+  }
+  
+    .mouth {
+    width: 60%;
+    height: 10px;
+    position: absolute;
+    left: 60;
+    bottom: 0;
+    border-top: 4px solid var(--gray);
+    border-left: 4px solid var(--gray);
+    border-right: 4px solid var(--gray);
+    border-radius: 66% 60% 10% 10%;
+    transform: rotate(180deg) translateY(40px);
+  }
+  
+    .teeth {
+    background-color: var(--gray);
+    width: 15%;
+    height: 20%;
+    top: 62%;
+    left: 50%;
+    position: absolute;
+    clip-path: polygon(100% 0, 0 0, 49% 100%);
+    transform: rotate(10deg)
+  }
+  
+    .teeth-right {
+    background-color: var(--gray);
+    width: 15%;
+    height: 20%;
+    top: 62%;
+    left: 102%;
+    position: absolute;
+    clip-path: polygon(100% 0, 0 0, 49% 100%);
+    transform: rotate(-10deg)
+  }
+  
+  .tear {
+    background-color: red;
+    width: 15%;
+    height: 20%;
+    top: 79%;
+    left: 51%;
+    position: absolute;
+    border-radius: 100% 0% 74% 57% / 66% 0% 84% 63%;
+    transform: rotate(-30deg);
+    opacity: 0%;
+    animation: crying 10s infinite;
+    animation-fill-mode: forwards;
+  }
+  
+  .bites {
+    background-color: var(--bg);
+    width: 15%;
+    height: 15%;
+    border-radius: 50%;
+    position: absolute;
+    right: 6%;
+    top: 28%;
+    animation-name: bite1;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+/*     OR animation: bite1 3s infinite; */
+  }
+
+  .bites::before {
+    content: "";
+    background-color: var(--bg);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: -70%;
+    left: -10%;
+    animation-name: bite2;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+/*     OR animation: bite2 3s infinite; */
+  }
+  
+    .bites::after {
+    content: "";
+    background-color: var(--bg);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    animation-name: bite3;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+/*     OR animation: bite3 3s infinite; */
+  }
+  
+  
+</style>
+
+<div class="frame">
+  <div class="shell"></div>
+  <div class="meat">
+    <div class="mince"></div>
+    <div class="mince"></div>
+    <div class="mince"></div>
+    <div class="mince"></div>
+  </div>
+  <div class="salad">
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+  </div>
+  <div class="tomatoes">
+    <div class="tomato"></div>
+    <div class="tomato"></div>
+    <div class="tomato"></div>
+  </div>
+  <div class="shell s-right"></div>
+  <div class="face">
+    <div class="eye e-right"></div>
+    <div class="mouth"></div>
+    <div class="tear"></div>
+    <div class="teeth"></div>
+    <div class="teeth-right"></div>
+  </div>
+  <div class="bites"></div>
+</div>
+
+
+
+
